@@ -4,7 +4,7 @@
  * description: 一个小型的前端框架库
  */
 
-'use static'
+'use strict'
 ;(function(){
 	
 })(Window);
