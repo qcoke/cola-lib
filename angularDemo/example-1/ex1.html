@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>angular demo-1</title>
+    <script src="//www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"></script>
+</head>
+<body>
+    <div>
+        <p>输入：<input type="text" ng-model="name"/></p>
+        <p>动态显示：<span ng-bind="name"></span></p>
+        <hr/>
+        <p>动态表达式：{{ 5+5 }}</p>
+        <hr/>
+        <p>初始化数据：
+            <i data-ng-app="" data-ng-init="firstName='Json'"></i>
+            <span>姓名为：<b data-ng-bind="firstName"></b></span>
+        </p>
+        <hr/>
+        <i ng-init="secondName='Jordan'"></i>
+        <p>
+            请再输入框中输入：<input type="text" ng-model="secondName" />
+            <br/>
+            <span>你输入的值是：{{secondName}}</span>
+        </p>
+        <hr/>
+        <i ng-init="names=['Jani','Hege','Kai']"></i>
+        <p>是用ng-repeat循环</p>
+        <ul>
+            <li ng-repeat="x in names">
+                {{x}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
