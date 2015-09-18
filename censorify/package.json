@@ -1,0 +1,11 @@
+{
+	"author":"可乐加糖",
+	"name":"censorify",
+	"version":"0.1.1",
+	"description":"npm up test",
+	"main":"censortext",
+	"dependencies":{},
+	"engines":{
+		"node":"*"
+	}
+}
