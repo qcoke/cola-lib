@@ -8,6 +8,13 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+// 连接数据库
+var mongoose = require('mongoose');
+var Comment = require('./models/comment');
+
+mongoose.connect('mongodb://localhost/test');
+
+
 var app = express();
 
 // view engine setup
@@ -18,12 +25,31 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+app.get('/list', function(req, res) {
+  Comment.list(function(err, data) {
+    console.dir(data);
+    res.json(data);
+  })
+});
+
+app.get('/save', function(req, res) {
+  var comm = new Comment({
+    body: "测试内容" + new Date().getTime(),
+    title: "测试标题" + new Date().getTime(),
+    author: '可乐加糖'
+  });
+  comm.save();
+  res.send("save success");
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
