@@ -23,7 +23,6 @@ const CommentList = React.createClass({
 			method: 'get',
 			success: function(data) {
 				for (var i in data) {
-					console.info(i);
 					list.push(<CommentItem c_title={data[i].title} c_body={data[i].body} />);
 				}
 				this.state.commentData = list;
@@ -44,29 +43,7 @@ const CommentList = React.createClass({
 	}
 });
 
-let NoLink = React.createClass({
-	getInitialState: function() {
-		return {
-			message: 'Hello!'
-		};
-	},
-	handleChange: function(event) {
-		this.setState({
-			message: event.target.value
-		});
-	},
-	render: function() {
-		var message = this.state.message;
-		return <div>
-				<CommentList />
-				<hr/>
-		    	<input type="text" value={message} onChange={this.handleChange} />
-		    	<br/>
-		    	<span>{this.state.message}</span>
-		    </div>;
-	}
-});
 React.render(
-	<NoLink/>,
+	<CommentList/>,
 	document.getElementById('content')
 );
