@@ -4,8 +4,36 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>demo1</title>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 </head>
 <body>
-	
+	<script type="text/javascript">
+		/*
+		var promise = Promise.resolve($.ajax('ex1.json'));
+		promise.then(function(value){
+			console.dir(value);
+		});
+		*/
+
+		/*
+		Promise.resolve(42).then(function(value){
+			throw new Error("自定义错误");
+			//console.log('success:===>'+value);
+		}).catch(function(error){
+			console.error('error...');
+			console.dir(error);
+		})
+		*/
+
+		var promise = new Promise(function(resolve){
+			console.log('inner promise');
+			resolve(42);
+		});
+		promise.then(function(value){
+			console.log(value);
+		});
+		console.log('outer promise');
+
+	</script>
 </body>
 </html>
