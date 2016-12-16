@@ -1,0 +1,10 @@
+{
+	"success": true,
+	"data": [{
+		"userName": "Michael",
+		"sex": "Man"
+	}, {
+		"userName": "Kobe",
+		"sex": "Man"
+	}]
+}
