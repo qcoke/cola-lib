@@ -14,5 +14,5 @@ function getPoint() {
 		y
 	};
 }
-
+// 我就写一行注释试试看
 console.dir(getPoint());
