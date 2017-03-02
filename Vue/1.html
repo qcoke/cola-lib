@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		Vue Demo 1
+	</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css">
+	<script type="text/javascript" src="http://cdn.bootcss.com/vue/2.2.1/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<button @click="jian">-</button>
+		<span>{{count}}</span>
+		<button @click="inc">+</button>
+	</div>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data(){
+				return {count:0}
+			},
+			methods:{
+				inc(){
+					this.count++;
+				},
+				jian(){
+					if(this.count - 1 >= 0){
+						this.count--;
+					}
+				}
+			}
+		});
+	</script>
+</body>
+</html>
