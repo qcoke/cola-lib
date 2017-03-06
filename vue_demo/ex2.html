@@ -3,10 +3,34 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Demo</title>
-	
+	<title>Demo2</title>
+	<script src="vue.js"></script>
 </head>
 <body>
-	
+	<h3>app1</h3>
+	<hr>
+	<div id="demo">
+		<button @click="change">Change</button>
+		<pre>{{$data}}</pre>
+	</div>
+	<script type="text/javascript">
+		var demo = new Vue({
+			el:"#demo",
+			data:{
+				thing: 1
+			},
+			watch:{
+				thing:function(val,oldVal){
+					alert("thing发生变化了，旧的值是:"+oldVal+",新的值是:"+val);
+					return false;
+				}
+			},
+			methods:{
+				change:function(){
+					this.thing = 5;
+				}
+			}
+		});
+	</script>
 </body>
 </html>
