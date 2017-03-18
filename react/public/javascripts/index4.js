@@ -36,6 +36,9 @@ const CommentList = React.createClass({
 	render: function() {
 		return (
 			<div>
+				<CommentItem data={this.state.commentData}></CommentItem>
+
+
 				<h4>评论列表</h4>
 				<div>{this.state.commentData}</div>
 			</div>
