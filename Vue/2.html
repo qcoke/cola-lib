@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+		Vue Demo 1
+	</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/normalize/5.0.0/normalize.min.css">
+	<script type="text/javascript" src="http://cdn.bootcss.com/vue/2.2.1/vue.min.js"></script>
+</head>
+<body>
+	<h5>Demo</h5>
+	<hr>
+	<div id="todo-app">
+		<input type="text" value="" placeholder="请输入需要添加的元素" v-model="todo" />
+		<input type="button" value="add" @click="add" />
+		<ul>
+			<li v-for="(item,index) in items">{{item}}<button @click="rm(index)">X</button></li>
+		</ul>
+	</div>
+
+	
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#todo-app",
+			data:{
+				items:["item1","item2","item3"],
+				todo:''
+			},
+			methods:{
+				rm:function(i){
+					this.items.splice(i,1);
+				},
+				add:function(){
+					if(this.todo){
+						this.items.push(this.todo);
+						this.todo = "";
+					}
+				}
+			}
+		})
+	</script>
+
+	<!-- 界面DEMO -->
+	<div id="demo">
+		<button @click="change">change</button>
+		<pre>{{$data}}</pre>
+	</div>
+	<script>
+		new Vue({
+			el:"#demo",
+			data:{
+				things:[{foo:1},{foo:2}]
+			},
+			watch:{
+				things:{
+					handler:function(val,oldVal){
+						alert("a thing change");
+					},
+					deep:true
+				}
+			},
+			methods:{
+				change:function(){
+					this.things[0].foo = 5
+				}
+			}
+		});
+	</script>
+
+	<div id="demo2">
+		<input type="text" v-model="money" />
+		<span>{{RMB}}</span>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:"#demo2",
+			data:{
+				money: 1.10
+			},
+			computed:{
+				RMB:function(){
+					return '我是经过函数处理的￥' + new Date().toString() + "," + this.money
+				}
+			}
+		})
+	</script>
+</body>
+</html>
