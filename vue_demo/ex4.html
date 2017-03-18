@@ -25,5 +25,22 @@
         }
     });
 </script>
+
+<h3>测试bind事件</h3>
+<hr/>
+<div id="app2">
+    <input v-bind:value="raw">
+    <div v-html="raw"></div>
+</div>
+<script>
+    var a = new Vue({
+        el:"#app2",
+        data(){
+            return {
+                raw:"<h2>42</h2>"
+            }
+        }
+    });
+</script>
 </body>
 </html>
