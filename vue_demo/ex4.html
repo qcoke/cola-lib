@@ -42,5 +42,47 @@
         }
     });
 </script>
+
+<h3>测试STYLE的属性绑定</h3>
+<hr/>
+<div id="app3">
+    <div style="color:red;font-size:12px;">abc</div>
+    <div v-bind:style="[s1,s2]">测试文字A</div>
+    <div v-bind:style="styleObject">测试文字B</div>
+</div>
+<script>
+    var b = new Vue({
+        el:"#app3",
+        data:{
+            styleObject:{
+                color:'green',
+                fontSize:'15px'
+            },
+            s1:{
+                color:"red"
+            },
+            s2:{
+                fontSize:"14px"
+            }
+        }
+    });
+</script>
+
+<h3>测试事件绑定</h3>
+<hr/>
+<div id="app4">
+    <button v-on:click="who">Who</button>
+    <span v-on:click="who">我是一串单纯的文字</span>
+</div>
+<script>
+    var app4 = new Vue({
+        el:"#app4",
+        methods:{
+            who:function(event){
+                console.log(event.target.tagName);
+            }
+        }
+    });
+</script>
 </body>
 </html>
