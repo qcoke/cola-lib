@@ -56,5 +56,60 @@
 				}
 			});
 		</script>
+
+		<h4>多数据绑定</h4>
+		<hr>
+		<div id="app3">
+			<input type="checkbox" value="1" v-model="checks" />
+			<input type="checkbox" value="2" v-model="checks" />
+			<input type="checkbox" value="3" v-model="checks" />
+			<label for="checkbox">{{checks}}</label>
+		</div>
+		<script>
+			var a = new Vue({
+				el:"#app3",
+				data(){
+					return {
+						checks:["1","2"]
+					}
+				}
+			});
+		</script>
+
+		<h4>Radio 数据绑定</h4>
+		<hr>
+		<div id="app4">
+			<input type="radio" value="1" v-model="which">
+			<input type="radio" value="2" v-model="which">
+			<span>{{which}}</span>
+		</div>
+		<script>
+			var app4 = new Vue({
+				el:"#app4",
+				data(){
+					return {
+						which:"2"
+					}
+				}
+			});
+		</script>
+
+		<h4>TextArea 数据绑定</h4>
+		<hr>
+		<div id="app5">
+			<textarea cols="30" rows="10" v-model="msg" placeholder="input some lines"></textarea>
+			<p style="white-space: pre;">
+				Message:<br/>
+				{{msg}}
+			</p>
+		</div>
+		<script>
+			new Vue({
+				el:"#app5",
+				data:{
+					msg:""
+				}
+			})
+		</script>
 	</body>
 </html>
