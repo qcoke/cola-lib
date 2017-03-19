@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>demo7</title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<!-- 
+		<div id="app">
+			<label><input type="checkbox" ref="c2" v-bind:checked="checked" @change="change" />v-bind</label>
+			<br/>
+			<label for="checkbox">{{checked}}</label>
+		</div>
+		<script>
+		var a= new Vue({
+			el: '#app',
+			data(){
+				return {checked : true}
+			},
+			methods:{
+				change(){
+					this.checked = this.$refs.c2.checked
+				}
+			}
+		});
+		</script>
+		-->
+		<h4>简化版的数据绑定</h4>
+		<hr/>
+		<div id="app">
+			<label><input type="checkbox" v-model="checked">v-model</label><br/>
+			<label for="checkbox">{{checked}}</label>
+		</div>
+		<script>
+			var a = new Vue({
+				el:"#app",
+				data(){
+					return {checked:true}
+				}
+			});
+		</script>
+
+		<div id="app2">
+			<label>测试一段文字绑定：<input type="text" v-model="textValue"></label>
+			<span>{{textValue}}</span>
+		</div>
+		<script>
+			var b = new Vue({
+				el:"#app2",
+				data(){
+					return {
+						textValue:"123"
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
