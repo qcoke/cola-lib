@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>demo8</title>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div id="app1">
+		<span v-text="value"></span>
+	</div>
+	<script>
+		var app1 = new Vue({
+			el:"#app1",
+			data(){
+				return {value:42}
+			}
+		});
+	</script>
+	<hr/>
+	<div id="app2">
+		<a v-bind:href="hrefVal">url</a>
+	</div>
+	<script>
+		var app2 = new Vue({
+			el:"#app2",
+			data(){
+				return {hrefVal:"http://www.baidu.com/ sded"}
+			}
+		});
+	</script>
+	<hr/>
+	<div id="app3" @click="t1">
+		<a href="http://t.cn" v-on:click.prevent.stop = "t2">t.cn</a>
+	</div>
+	<script>
+		var app3 = new Vue({
+			el:"#app3",
+			methods:{
+				t1(){console.log("t1")},
+				t2(){console.log("t2")}
+			}
+		});
+	</script>
+	<hr>
+	<div id="app4">
+		<button @click="f=!f">Toggle</button>
+		<input :hidden="f" />
+	</div>
+	<script>
+		Vue.directive('hidden',{
+			update:function(el,binding){
+				el.style.display = binding.value?'none':'inline'
+			}
+		});
+		var app4 = new Vue({
+			el:"#app4",
+			data(){
+				return {
+					f:false
+				}
+			}
+		});
+	</script>
+	<hr>
+
+	<div id="app5">
+	  <comp></comp>
+	</div>
+	<script>
+	Vue.directive('hidden', {
+	  update:function(el,binding){
+	    el.style.display = binding.value?'none':'inline'
+	  }
+	})
+
+	Vue.component('comp', {
+	  template:'<div><button @click="hate=!hate">toggle</button><div v-hidd="hate">{{msg}}</div></div>',
+	  directives:{
+	    hidd:{
+	       update:function(el,binding){
+	         console.log(binding.value)
+	          el.style.display = binding.value?'none':'block'
+	        }
+	    }
+	  },
+	  data(){
+	    return{hate:false,msg:1}
+	  }
+	})
+
+	new Vue(
+	  {
+	    el:'#app5',
+	    data(){
+	      return{f:false}
+	    }
+	  })
+	</script>
+</body>
+</html>
