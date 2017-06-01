@@ -5,7 +5,6 @@ import App from './App'
 // import router from './router'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-
 // Vue.config.productionTip = false
 const Home = {template:"<div>home page</div>"};
 const About = {template:"<div>about page</div>"};
@@ -18,8 +17,6 @@ const router = new VueRouter({
 	  { path: '/', redirect: '/home'}
 	]
 });
-
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
