@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>用户列表</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	我是跳转过来的用户列表页面
+	<a href="javascript:history.go(-1);">返回</a>
+	<script>
+		var a = function(){
+			this.name = "liucan";
+		}
+		a.prototype = {
+			sayHello:function(){
+				alert(this.name);
+			}
+		}
+
+		var b = function(){
+			this.name = 'kobe';
+		}
+		b.prototype = new a();
+
+		new a().sayHello();
+		new b().sayHello();
+
+	</script>
+</body>
+</html>

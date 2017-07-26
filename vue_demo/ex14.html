@@ -6,12 +6,7 @@
 		<title>ex13</title>
 		<script src="vue.js"></script>
 		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-
-
-	<script src=requestjs data-main="a.js"></script>
-
-	xxrequire('')
-
+		<script src="https://cdn.bootcss.com/vuex/2.3.1/vuex.min.js"></script>
 	</head>
 	<body>
 		<div id="app">
@@ -33,27 +28,47 @@
 			<router-view class="view"></router-view>
 		</div>
 		<script>
-		const Home = { template: '<div><h1>Home</h1><router-view></router-view></div>' }
-		const Foo = { template: '<div>foo</div>' }
-		const Bar = { template: '<div>bar</div>' }
-		const Baz = { template: '<div>baz</div>' }
-		const router = new VueRouter({
-		// mode: 'history',
-		routes: [
-		{ path: '/home', component: Home,
-		children: [
-		// absolute alias
-		{ path: 'foo', component: Foo, alias: '/foo' },
-		// relative alias (alias to /home/bar-alias)
-		{ path: 'bar', component: Bar, alias: 'bar-alias' },
-		// multiple aliases
-		{ path: 'baz', component: Baz, alias: ['/baz', 'baz-alias'] }
-		]
+		const Home = {
+			template: '<div><h1>Home</h1><router-view></router-view></div>'
 		}
-		]
+		const Foo = {
+			template: '<div>foo</div>'
+		}
+		const Bar = {
+			template: '<div>bar</div>'
+		}
+		const Baz = {
+			template: '<div>baz</div>'
+		}
+		const router = new VueRouter({
+			// mode: 'history',
+			routes: [{
+				path: '/home',
+				component: Home,
+				children: [
+					// absolute alias
+					{
+						path: 'foo',
+						component: Foo,
+						alias: '/foo'
+					},
+					// relative alias (alias to /home/bar-alias)
+					{
+						path: 'bar',
+						component: Bar,
+						alias: 'bar-alias'
+					},
+					// multiple aliases
+					{
+						path: 'baz',
+						component: Baz,
+						alias: ['/baz', 'baz-alias']
+					}
+				]
+			}]
 		})
 		new Vue({
-		router
+			router
 		}).$mount('#app')
 		</script>
 	</body>

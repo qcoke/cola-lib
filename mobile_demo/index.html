@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mobile_demo</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		body{padding:20px;}
+		.demo-1{
+			width: 90px;
+			height: 85px;
+			background-color: #dedede;
+			border:  1px solid #ccc;
+			font-size: 12px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="demo-1">
+		<span v-text="value"></span>
+		<button v-on:click="doSomething">Click me</button>
+	</div>
+	<hr/>
+	<h1>移动端-测试代码</h1>
+	<ul>
+		<li><a href="ajiat://host/jump?title=休息休息&url=http://192.168.1.181/ext/demo/user_list.html?userid=12389274892374987">打开USERLIST.HTML</a></li>
+		<li><a href="ajiat://host/native?name=shaidan&params={'name':'张三','age':13}">调用界面</a></li>
+		<li><button id="b1" onclick="javascript:a();">执行方法</button></li>
+	</ul>
+
+	<script type="text/javascript">
+		new Vue({
+			el:'#app',
+			methods:{
+				doSomething:function(){
+					alert('hello world');
+					return false;
+				}
+			},
+			data(){
+				return {
+					value: 42
+				}
+			}
+		});
+		function a(){
+			var url = "ajiat://host/nativeComponents?name=setHeader&params={title:'我的书架','rname':'资源库','rurl':'http://www.baidu.com/',showRButton:true}";
+			alert(url);
+			window.location.href = url;
+		}
+	</script>
+</body>
+</html>
