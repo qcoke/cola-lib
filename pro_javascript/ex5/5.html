@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>5.5</title>
+    <link rel="stylesheet" href="../style.css" />
     <script type="text/javascript" src="../asserts.js"></script>
 </head>
 <body>
@@ -14,10 +15,10 @@
             var feints = 0;
             this.getFeints = function(){
                 return feints;
-            }
-            this.feint = funtion(){
-                feints++
             };
+            this.feint = function(){
+                feints++;
+            }
         }
         // 开始测试 Ninja 实例
         var ninja = new Ninja();
