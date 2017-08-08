@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>5.2</title>
+    <script type="text/javascript" src="../asserts.js"></script>
+</head>
+<body>
+    <ul id="results"></ul>
+    <script type="text/javascript">
+        var outerValue = "ninja";
+        var later;
+        function outerFunction(){
+            var innerValue = "samurai";
+            function innerFunction(){
+                assert(outerValue,"I can see the ninja.");
+                assert(innerValue,"I can see the samurai.");
+            }
+            later = innerFunction;
+        }
+        outerFunction();
+        later();
+    </script>
+</body>
+</html>
