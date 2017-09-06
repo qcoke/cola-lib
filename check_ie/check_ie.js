@@ -15,7 +15,7 @@
 	}
 	var divDOM = document.createElement("div");
 	divDOM.id = "alert_browser";
-	divDOM.innerHTML = "<p style='font-family:Georgia,Serif;width:100%;height:50px;line-height:50px;font-size:14px;margin:0;padding:0;"+
+	divDOM.innerHTML = "<p style='z-index:999999;font-family:Georgia,Serif;width:100%;height:50px;line-height:50px;font-size:14px;margin:0;padding:0;"+
 	"text-align:center;position:absolute;left:0;top:0;"+
 	"background-color:#FAFAD2;border-bottom: 1px solid #DCDCDC'>系统检测您的浏览器版本过低，请升级您的浏览器&nbsp;&nbsp;"+
 	// 浏览器下载图标全部在这里
