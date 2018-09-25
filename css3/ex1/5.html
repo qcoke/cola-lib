@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>5.html</title>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.parallax.min.js"></script>
+  <style type="text/css">
+  body,html{
+    height: 100%;
+  }
+  .my-parallax-window {
+      width: 100%;
+      min-height: 100%;
+      display: block;
+      background: transparent;
+      border: 1px solid #f00;
+  }
+  .my-parallax-window p{
+    height: 300px;
+    background-color: #fff;
+  }
+  </style>
+</head>
+<body>
+    <div class="my-parallax-window">
+      <div class="my-parallax-slider">
+        <img src="1.jpg" width="100%" height="100%" />
+        <p>This content and the image will move when scrolling</p>
+      </div>
+      <div class="some-optional-fixed-content">
+        <p>This content will stay in place</p>
+      </div>
+    </div>
+    <div class="my-parallax-window">
+        <div class="my-parallax-slider">
+          <img src="2.jpg" />
+          <p>This content and the image will move when scrolling</p>
+        </div>
+        <div class="some-optional-fixed-content">
+          <p>This content will stay in place</p>
+        </div>
+      </div>
+      <div class="my-parallax-window">
+          <div class="my-parallax-slider">
+            <img src="3.jpg" />
+            <p>This content and the image will move when scrolling</p>
+          </div>
+          <div class="some-optional-fixed-content">
+            <p>This content will stay in place</p>
+          </div>
+        </div>
+    <script type="text/javascript">
+    $('.my-parallax-window').parallax({
+      speed: -.2,
+      sliderSelector: '>.my-parallax-slider',
+    })
+    </script>
+</body>
+</html>
