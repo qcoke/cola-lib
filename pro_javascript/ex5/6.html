@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo</title>
+  <style type="text/css">
+  * {margin: 0; padding: 0;font-size: 12px;}
+  .container {
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #eeeeee;
+    display: flex;
+  }
+  .a {
+    display: flex;
+    flex: 1;
+  }
+  .a div {
+    margin: 0 10px;
+  }
+  .a-1 {
+    width: 200px;
+  }
+  .a-2 {
+    flex: 1;
+  }
+  .b {
+    width: 200px;
+    border-left: 1px solid #666666;
+  }
+
+  </style>
+  <script type="text/javascript">
+  function createPersion(name,age) {
+    return {
+      name: name,
+      age: age
+    }
+  }
+  function createPersion2(name,age) {
+    return {
+      name,
+      age
+    }
+  }
+  var s2 = createPersion2("LIUCAN",22)
+  console.dir(s2);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="a">
+      <div class="a-1">left-a：固定宽度200</div>
+      <div class="a-2">
+        <h5>left-b：不固定宽度，但是文字距离右侧应该有10像素。</h5>
+        <p>
+            除此之外，Docker Compose 还可以使用 docker-compose -scale 扩展多个相容的容器，用来实现负载均衡，可以扩容，也可以减容。例如：实现无缝部署项目，先扩容一个新的 Container，当 Container 启动完毕后，加入到集群中，然后更新老容器，更新完后再加入集群中。
+        </p>
+      </div>
+    </div>
+    <div class="b">I'm b panel,width is: 200px</div>
+  </div>
+</body>
+</html>

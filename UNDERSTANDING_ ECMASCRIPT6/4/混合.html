@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象的混合</title>
+</head>
+<body>
+  <div id="console"></div>
+  <script type="text/javascript">
+  var receiver = {};
+  Object.assign(
+    receiver,
+    {type:"js",name:"file.js"},
+    {type:"css"}
+  );
+  console.log("type:", receiver.type);
+  console.log("name:", receiver.name);
+  </script>
+</body>
+</html>
