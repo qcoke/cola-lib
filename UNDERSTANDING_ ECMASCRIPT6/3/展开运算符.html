@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>展开运算</title>
 </head>
+
 <body>
+  <input type="button" value="点击我" onclick="javascript:document.write('我是刘煜程');" />
   <script type="text/javascript">
-    let values = [-25,-50,-75,-100];
+    let values = [-25, -50, -75, -100];
     console.log(Math.max(...values, 0));
 
-    let values2 = [25,50,75,100];
+    let values2 = [25, 50, 75, 100];
     console.log("values2:", Math.max.apply(Math, values));
 
     let str = "hello";
-    console.log("==>",str.split("").sort().join(""));
+    console.log("==>", str.split("").sort().join(""));
+
+    function f(n) {
+      let result = [0.0, 1.0, 1.0]
+      if (n < 0) {
+        throw new Error('请输入一个正数')
+      }
+      else if (n < 3) {
+        return 1;
+      }
+      else {
+        for (i = 2; i <= n; i++) {
+          result[i] = result[i - 1] + result[i - 2]
+          console.log(result[i])
+        }
+        return result[result.length - 1]
+      }
+    }
+    f(1000)
   </script>
 </body>
+
 </html>
