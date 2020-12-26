@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高级CSS3按钮</title>
+  <style type="text/css">
+    .btn {
+      display: inline-block;
+      font-weight: 400;
+      padding: 8px 15px;
+      text-align: center;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .btn-default {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-default:hover {
+      color: #fff;
+      background-color: #0099FF;
+    }
+    .ripple {
+      position: relative;
+    }
+
+    .ripple:focus {
+      outline: none;
+    }
+
+    .ripple:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      pointer-events: none;
+      background-color: #333;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      opacity: 0;
+      transition: all .3s;
+    }
+
+    .ripple:active:after {
+      opacity: .3;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: 0s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wapper">
+    <div class="container text-center">
+      <button class="btn btn-default ripple btn-lg">Button</button>
+      <button class="btn btn-default ripple btn-lg">Button with very long content</button>
+    </div>
+  </div>
+</body>
+
+</html>
