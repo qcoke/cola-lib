@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一个递归算法</title>
+</head>
+<body>
+  <script type="text/javascript">
+  console.time();
+  let arr = [
+    { id: 1, name: '部门1', pid: 0 },
+    { id: 2, name: '部门2', pid: 1 },
+    { id: 3, name: '部门3', pid: 1 },
+    { id: 4, name: '部门4', pid: 3 },
+    { id: 5, name: '部门5', pid: 4 },
+  ]
+
+  function tree(arr) {
+    let resultArr = [];
+    let resultMap = new Map();
+    arr.map(item => {
+      resultMap.set(item.id, { ...item })
+    })
+    resultMap.forEach(function (i) {
+      if (i.pid === 0) {
+        resultArr.push(i);
+      } else {
+        let _temp_ = resultMap.get(i.pid);
+        _temp_.children ? _temp_.children.push(i) : _temp_.children = [i];
+      }
+    })
+    console.log('===>', JSON.stringify(resultArr));
+  }
+  tree(arr)
+  console.timeEnd();
+  </script>
+</body>
+</html>
