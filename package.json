@@ -1,0 +1,23 @@
+{
+  "name": "cola-lib",
+  "version": "1.0.0",
+  "description": "前端开发实践代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qcoke/cola-lib.git"
+  },
+  "author": "LIUCAN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qcoke/cola-lib/issues"
+  },
+  "homepage": "https://github.com/qcoke/cola-lib#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2"
+  }
+}
